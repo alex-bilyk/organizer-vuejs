@@ -5,7 +5,7 @@
             <span class="todo-list__heading__date">{{ momentFunc(selectedDate).format('DD.MM.YYYY') }}</span>
         </div>
 
-        <div class="todo-list__items">
+        <div class="todo-list__inner">
             <div
                 v-if="!(!!Object.keys(list).length
                 && list[generateNameOfDate(selectedDate)]
@@ -14,14 +14,25 @@
                 {{ defaultMessage }}
             </div>
 
-            <ol v-else>
+            <ol
+                v-else
+                class="todo-list__items"
+            >
                 <li
                     v-for="(item, index) in list[generateNameOfDate(selectedDate)]"
                     :key="index"
+                    class="todo-list__items__item"
                 >
-                    <div>{{ item }}</div>
+                    <div class="todo-list__items__item__inner">
+                        <div class="todo-list__items__item__title">{{ item }}</div>
 
-                    <button @click="removeTask(index)">Remove</button>
+                        <button
+                            class="button-remove"
+                            @click="removeTask(index)"
+                        >
+                            Remove
+                        </button>
+                    </div>
                 </li>
             </ol>
 

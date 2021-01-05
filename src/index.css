@@ -44,6 +44,10 @@ body {
   cursor: pointer;
 }
 
+.table__body__item:hover {
+  background: rgba(204, 204, 204, 0.4);
+}
+
 .table__body__item.active {
   color: red;
 }
@@ -67,8 +71,18 @@ body {
   font-weight: 600;
 }
 
-.todo-list__items {
+.todo-list__inner {
   padding: 10px 0;
+}
+
+.todo-list__items__item {
+  margin-top: 15px;
+}
+
+.todo-list__items__item__inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .input {
@@ -92,4 +106,14 @@ body {
 
 .button-add:disabled {
   cursor: not-allowed;
+}
+
+.button-remove {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  background: red;
+  cursor: pointer;
 }
