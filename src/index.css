@@ -1,0 +1,95 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.table {
+  margin-top: 40px;
+  border: 1px solid #000;
+}
+
+.table__heading {
+  display: flex;
+}
+
+.table__heading__item {
+  padding: 10px 5px;
+  width: calc(100% / 7);
+  text-align: center;
+  color: #000;
+  font-weight: 600;
+  background: lightslategray;
+  border: 1px solid #000;
+}
+
+.table__body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.table__body__item {
+  padding: 10px 5px;
+  width: calc(100% / 7);
+  text-align: center;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.table__body__item.active {
+  color: red;
+}
+
+.table__body__item.selected {
+  color: blue;
+}
+
+.todo-list {
+  margin-top: 40px;
+  padding: 10px;
+  border: 1px solid #000000;
+}
+
+.todo-list__heading {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #cccccc;
+}
+
+.todo-list__heading__date {
+  font-weight: 600;
+}
+
+.todo-list__items {
+  padding: 10px 0;
+}
+
+.input {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #ccc;
+}
+
+.button-add {
+  display: block;
+  margin-top: 25px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  background: #000;
+  cursor: pointer;
+}
+
+.button-add:disabled {
+  cursor: not-allowed;
+}
