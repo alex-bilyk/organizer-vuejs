@@ -102,6 +102,12 @@ export default {
 
     changeMonth(isNext = false) {
       this.viewMonth = new Date(moment(this.viewMonth).add(isNext ? 1 : -1, 'months'))
+
+      if (moment(`${this.selectedYear}-${this.selectedMonthName}`, 'YYYY-MMMM').daysInMonth() >= moment(this.selectedDate).format('D')) {
+        this.setSelectedDate(moment(`${this.selectedYear}-${this.selectedMonthName}-${moment(this.selectedDate).format('D')}`).toJSON())
+      } else {
+        this.setSelectedDate(moment(`${this.selectedYear}-${this.selectedMonthName}-1`).toJSON())
+      }
     },
 
     setSelectedDate(val) {
