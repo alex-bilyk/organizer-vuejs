@@ -1,11 +1,11 @@
 <template>
-    <div class="todo-list">
-        <div class="todo-list__heading">
+    <div class="TodoList">
+        <div class="TodoList__heading">
             Organizer:
-            <span class="todo-list__heading__date">{{ momentFunc(selectedDate).format('DD.MM.YYYY') }}</span>
+            <span class="TodoList__heading__date">{{ momentFunc(selectedDate).format('DD.MM.YYYY') }}</span>
         </div>
 
-        <div class="todo-list__inner">
+        <div class="TodoList__inner">
             <div
                 v-if="!(!!Object.keys(list).length
                 && list[generateNameOfDate(selectedDate)]
@@ -16,15 +16,15 @@
 
             <ol
                 v-else
-                class="todo-list__items"
+                class="TodoList__items"
             >
                 <li
                     v-for="(item, index) in list[generateNameOfDate(selectedDate)]"
+                    class="TodoList__items__item"
                     :key="index"
-                    class="todo-list__items__item"
                 >
-                    <div class="todo-list__items__item__inner">
-                        <div class="todo-list__items__item__title">{{ item }}</div>
+                    <div class="TodoList__items__item__inner">
+                        <div class="TodoList__items__item__title">{{ item }}</div>
 
                         <button
                             class="button-remove"

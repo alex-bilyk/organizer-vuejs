@@ -10,8 +10,8 @@
       <div class="table__heading">
         <div
           v-for="(day, index) in weekDays"
-          :key="index"
           class="table__heading__item"
+          :key="index"
         >
           {{ day }}
         </div>
@@ -20,8 +20,8 @@
       <div class="table__body">
         <div
           v-for="(day, index) in getDays(selectedYear, viewMonth.getMonth())"
-          :key="index"
           class="table__body__item"
+          :key="index"
           :class="{
             'active': momentFunc(new Date()).format('YYYY-MM-DD') === momentFunc(new Date(day.date)).format('YYYY-MM-DD'),
             'selected': momentFunc(selectedDate).format('YYYY-MM-DD') === momentFunc(new Date(day.date)).format('YYYY-MM-DD')
@@ -112,6 +112,7 @@ export default {
 
     setSelectedDate(val) {
       this.selectedDate = new Date(val)
+
       this.$emit('set-selected-date', val)
     }
   }
